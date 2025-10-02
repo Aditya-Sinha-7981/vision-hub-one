@@ -1,58 +1,77 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Shield } from "lucide-react";
+import { Shield, Award, TrendingUp } from "lucide-react";
 
 const CTASection = () => {
   return (
     <section className="py-20 md:py-32 bg-gradient-section border-t border-primary/10">
       <div className="container px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-lg bg-card/50 backdrop-blur-sm border border-primary/30 p-12 md:p-16 shadow-glow">
-            {/* Decorative gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center space-y-6 mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold">
+              Why <span className="text-primary">SecureWipe Pro</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto font-light">
+              The enterprise data security market is projected to reach $15B by 2027
+            </p>
+          </div>
 
-            <div className="relative z-10 text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-primary/30">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-xs font-medium text-primary uppercase tracking-wider">
-                  Trusted by 50,000+ Enterprises
-                </span>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Large feature card */}
+            <div className="md:col-span-2 md:row-span-2 bg-card/50 backdrop-blur-sm border border-primary/30 rounded-lg p-8 shadow-glow hover:border-primary/50 transition-all group">
+              <div className="h-full flex flex-col justify-between space-y-6">
+                <div>
+                  <Shield className="w-12 h-12 text-primary mb-4" />
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                    Addressing a Critical Market Need
+                  </h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    With increasing data privacy regulations (GDPR, CCPA, HIPAA) and rising cybersecurity threats, enterprises need certified data sanitization solutions. SecureWipe Pro provides military-grade security that meets international compliance standards, protecting organizations from data breaches and regulatory penalties.
+                  </p>
+                </div>
+                <div className="text-6xl md:text-8xl font-bold text-primary/20 group-hover:text-primary/30 transition-colors">
+                  $15B
+                </div>
               </div>
+            </div>
 
-              <h2 className="text-3xl md:text-5xl font-bold">
-                Ready to Secure Your Data?
-              </h2>
-
-              <p className="text-muted-foreground max-w-2xl mx-auto font-light">
-                Start your 30-day free trial today. No credit card required. Experience military-grade data security in minutes.
+            {/* Stat card 1 */}
+            <div className="bg-card/50 backdrop-blur-sm border border-primary/30 rounded-lg p-6 shadow-glow hover:border-primary/50 transition-all">
+              <Award className="w-8 h-8 text-primary mb-3" />
+              <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
+              <p className="text-sm text-muted-foreground font-light">
+                Data recovery prevention rate with DoD-certified algorithms
               </p>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-                <Input
-                  type="email"
-                  placeholder="Enter your work email"
-                  className="bg-muted/50 border-primary/20 focus:border-primary/40 h-12"
-                />
-                <Button
-                  size="lg"
-                  className="h-12 px-8 font-medium shadow-glow"
-                >
-                  Start Free Trial
-                </Button>
-              </div>
+            {/* Stat card 2 */}
+            <div className="bg-card/50 backdrop-blur-sm border border-primary/30 rounded-lg p-6 shadow-glow hover:border-primary/50 transition-all">
+              <TrendingUp className="w-8 h-8 text-primary mb-3" />
+              <div className="text-3xl font-bold text-primary mb-2">3x</div>
+              <p className="text-sm text-muted-foreground font-light">
+                Faster than competing solutions with multi-threaded processing
+              </p>
+            </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-muted-foreground text-xs">
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-primary" />
-                  <span className="uppercase tracking-wider">30-day free trial</span>
+            {/* Wide card */}
+            <div className="md:col-span-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/30 rounded-lg p-8 shadow-glow">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+                  <p className="text-sm text-muted-foreground font-light uppercase tracking-wider">
+                    Enterprise Clients
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-primary" />
-                  <span className="uppercase tracking-wider">No credit card needed</span>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                  <p className="text-sm text-muted-foreground font-light uppercase tracking-wider">
+                    Industry Certifications
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-primary" />
-                  <span className="uppercase tracking-wider">Cancel anytime</span>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <p className="text-sm text-muted-foreground font-light uppercase tracking-wider">
+                    Security Support
+                  </p>
                 </div>
               </div>
             </div>

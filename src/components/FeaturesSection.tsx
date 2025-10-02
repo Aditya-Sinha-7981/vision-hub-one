@@ -50,17 +50,60 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr">
+          {/* Large feature - spans 2 columns and 2 rows */}
+          <Card className="md:col-span-2 md:row-span-2 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow group">
+            <CardContent className="p-8 h-full flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors mb-6">
+                  <Shield className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3">{features[0].title}</h3>
+                <p className="text-muted-foreground font-light">{features[0].description}</p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-primary/20">
+                <p className="text-xs text-primary uppercase tracking-wider font-medium">DoD 5220.22-M Certified</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Medium features - span 2 columns each */}
+          <Card className="md:col-span-2 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow group">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">{features[1].title}</h3>
+                <p className="text-sm text-muted-foreground font-light">{features[1].description}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow group">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <FileCheck className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">{features[2].title}</h3>
+                <p className="text-sm text-muted-foreground font-light">{features[2].description}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Small features - single column */}
+          {features.slice(3).map((feature, index) => (
             <Card
-              key={index}
+              key={index + 3}
               className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow group"
             >
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-6 space-y-3">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
+                <h3 className="text-base font-semibold">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground font-light">{feature.description}</p>
               </CardContent>
             </Card>
