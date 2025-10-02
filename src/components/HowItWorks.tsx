@@ -29,16 +29,16 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 md:py-32 bg-gradient-section">
+    <section className="py-20 md:py-32 bg-gradient-section border-y border-primary/10">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold">
             Simple Process,{" "}
-            <span className="bg-gradient-hero bg-clip-text text-transparent">
+            <span className="text-primary">
               Maximum Security
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-light">
             Four straightforward steps to complete data sanitization with military-grade security
           </p>
         </div>
@@ -48,21 +48,21 @@ const HowItWorks = () => {
             <div key={index} className="relative">
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent -translate-x-1/2 z-0" />
+                <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-primary/40 to-transparent -translate-x-1/2 z-0" />
               )}
 
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-hero flex items-center justify-center shadow-strong">
-                    <step.icon className="w-8 h-8 text-primary-foreground" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shadow-glow">
+                    <step.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <span className="text-5xl font-bold text-muted-foreground/20">
+                  <span className="text-4xl font-bold text-primary/20">
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <h3 className="text-lg font-semibold">{step.title}</h3>
+                <p className="text-sm text-muted-foreground font-light">{step.description}</p>
               </div>
             </div>
           ))}

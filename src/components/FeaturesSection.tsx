@@ -36,16 +36,16 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 relative">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold">
             Powerful Features for{" "}
-            <span className="bg-gradient-hero bg-clip-text text-transparent">
+            <span className="text-primary">
               Complete Security
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-light">
             Enterprise-grade capabilities designed to meet the most stringent security and compliance requirements
           </p>
         </div>
@@ -54,14 +54,14 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="border-border/50 shadow-soft hover:shadow-strong transition-smooth hover:scale-105"
+              className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow group"
             >
               <CardContent className="p-6 space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center">
-                  <feature.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-lg font-semibold">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground font-light">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
